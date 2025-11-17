@@ -1,0 +1,105 @@
+<section class="detail-container">
+  <button type="button" class="back-button" (click)="goBack()">
+    ← Torna all'elenco
+  </button>
+
+  <div *ngIf="loading" class="state-message">
+    <div class="spinner"></div>
+    <p>Caricamento personaggio...</p>
+  </div>
+
+  <div *ngIf="!loading && errorMessage" class="state-message error">
+    <p>{{ errorMessage }}</p>
+    <button type="button" (click)="goBack()">Torna all'elenco</button>
+  </div>
+
+  <ng-container *ngIf="!loading && !errorMessage && character">
+    <div class="detail-header">
+      <div class="image-box">
+        <img
+          [src]="character.imageUrl || fallbackImage"
+          [alt]="character.name" />
+      </div>
+
+      <div class="info-main">
+        <h1>{{ character.name }}</h1>
+
+        <div class="chips">
+          <span class="chip">
+            Film: {{ character.films?.length || 0 }}
+          </span>
+          <span class="chip">
+            Serie TV: {{ character.tvShows?.length || 0 }}
+          </span>
+          <span class="chip">
+            Videogiochi: {{ character.videoGames?.length || 0 }}
+          </span>
+        </div>
+
+        <a
+          *ngIf="character.sourceUrl"
+          class="wiki-link"
+          [href]="character.sourceUrl"
+          target="_blank"
+          rel="noopener noreferrer">
+          Più info su Disney Wiki →
+        </a>
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-section" *ngIf="hasItems(character.films)">
+        <h2>Films</h2>
+        <ul>
+          <li *ngFor="let film of character.films">{{ film }}</li>
+        </ul>
+      </div>
+
+      <div class="detail-section" *ngIf="hasItems(character.shortFilms)">
+        <h2>Short Films</h2>
+        <ul>
+          <li *ngFor="let film of character.shortFilms">{{ film }}</li>
+        </ul>
+      </div>
+
+      <div class="detail-section" *ngIf="hasItems(character.tvShows)">
+        <h2>TV Shows</h2>
+        <ul>
+          <li *ngFor="let show of character.tvShows">{{ show }}</li>
+        </ul>
+      </div>
+
+      <div class="detail-section" *ngIf="hasItems(character.videoGames)">
+        <h2>Video Games</h2>
+        <ul>
+          <li *ngFor="let game of character.videoGames">{{ game }}</li>
+        </ul>
+      </div>
+
+      <div class="detail-section" *ngIf="hasItems(character.parkAttractions)">
+        <h2>Park Attractions</h2>
+        <ul>
+          <li *ngFor="let attraction of character.parkAttractions">
+            {{ attraction }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="detail-section two-column" *ngIf="hasItems(character.allies) || hasItems(character.enemies)">
+        <div *ngIf="hasItems(character.allies)">
+          <h2>Allies</h2>
+          <ul>
+            <li *ngFor="let ally of character.allies">{{ ally }}</li>
+          </ul>
+        </div>
+
+        <div *ngIf="hasItems(character.enemies)">
+          <h2>Enemies</h2>
+          <ul>
+            <li *ngFor="let enemy of character.enemies">{{ enemy }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

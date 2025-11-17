@@ -1,0 +1,58 @@
+<section class="list-container">
+  <div class="search-panel">
+    <label class="search-label" for="searchInput">
+      Cerca personaggio per nome
+    </label>
+    <div class="search-row">
+      <input
+        id="searchInput"
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="search()"
+        placeholder="Es. Mickey Mouse" />
+      <button type="button" (click)="search()">Cerca</button>
+      <button type="button" class="secondary" (click)="resetSearch()">Reset</button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="state-message">
+    <div class="spinner"></div>
+    <p>Caricamento in corso...</p>
+  </div>
+
+  <div *ngIf="!loading && errorMessage" class="state-message error">
+    <p>{{ errorMessage }}</p>
+    <button type="button" (click)="isSearching ? search() : loadCharacters(currentPage)">
+      Riprova
+    </button>
+  </div>
+
+  <div *ngIf="!loading && !errorMessage && characters.length === 0" class="state-message">
+    <p>Nessun personaggio da mostrare.</p>
+  </div>
+
+  <div *ngIf="!loading && characters.length > 0" class="grid">
+    <app-character-card
+      *ngFor="let character of characters"
+      [character]="character">
+    </app-character-card>
+  </div>
+
+  <div *ngIf="!loading && characters.length > 0" class="pagination">
+    <button
+      type="button"
+      (click)="goToPreviousPage()"
+      [disabled]="currentPage === 1">
+      ◀ Precedente
+    </button>
+
+    <span>Pagina {{ currentPage }} di {{ totalPages }}</span>
+
+    <button
+      type="button"
+      (click)="goToNextPage()"
+      [disabled]="currentPage === totalPages">
+      Successiva ▶
+    </button>
+  </div>
+</section>

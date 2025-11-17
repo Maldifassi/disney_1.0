@@ -1,0 +1,18 @@
+<article class="card">
+  <a class="card-link" [routerLink]="['/characters', character._id]">
+    <div class="image-wrapper">
+      <img
+        [src]="character.imageUrl || fallbackImage"
+        [alt]="character.name" />
+    </div>
+
+    <div class="card-body">
+      <h2>{{ character.name }}</h2>
+      <p class="meta">
+        Film: {{ character.films?.length || 0 }} ·
+        Serie TV: {{ character.tvShows?.length || 0 }}
+      </p>
+      <p class="cta">Vedi dettagli →</p>
+    </div>
+  </a>
+</article>
