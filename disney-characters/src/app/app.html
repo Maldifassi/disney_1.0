@@ -1,6 +1,24 @@
 <div class="app-shell">
   <header class="app-header">
-    <h1>Disney Characters Explorer</h1>
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="logo-circle">
+          <span>D</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Disney Explorer</span>
+          <span class="logo-sub">Characters</span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="theme-toggle"
+        (click)="toggleTheme()">
+        <span *ngIf="!isDarkTheme">🌙 Tema scuro</span>
+        <span *ngIf="isDarkTheme">☀️ Tema chiaro</span>
+      </button>
+    </div>
   </header>
 
   <main class="app-main">

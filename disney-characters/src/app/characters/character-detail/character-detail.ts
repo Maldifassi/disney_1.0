@@ -15,6 +15,7 @@ export class CharacterDetailComponent implements OnInit {
   character?: DisneyCharacter;
   loading = false;
   errorMessage = '';
+  showImage = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,10 +35,15 @@ export class CharacterDetailComponent implements OnInit {
   loadCharacter(id: string): void {
     this.loading = true;
     this.errorMessage = '';
+    this.showImage = true;
 
     this.disneyApi.getCharacterById(id).subscribe({
       next: (response: CharacterDetailResponse) => {
         this.character = response.data;
+
+        const url = this.character?.imageUrl ?? '';
+        this.showImage = !!url && url.trim().length > 0;
+
         this.loading = false;
       },
       error: () => {
@@ -47,12 +53,12 @@ export class CharacterDetailComponent implements OnInit {
     });
   }
 
-  goBack(): void {
-    this.router.navigate(['/characters']);
+  onImageError(): void {
+    this.showImage = false;
   }
 
-  get fallbackImage(): string {
-    return 'https://via.placeholder.com/400x400?text=Disney+Character';
+  goBack(): void {
+    this.router.navigate(['/characters']);
   }
 
   hasItems(list?: string[]): boolean {

@@ -15,11 +15,21 @@
 
   <ng-container *ngIf="!loading && !errorMessage && character">
     <div class="detail-header">
-      <div class="image-box">
-        <img
-          [src]="character.imageUrl || fallbackImage"
-          [alt]="character.name" />
-      </div>
+    <div class="image-box">
+
+      <!-- Se l'immagine è presente e valida -->
+      <img
+        *ngIf="showImage; else noImageDetail"
+        [src]="character?.imageUrl"
+        [alt]="character?.name"
+        (error)="onImageError()" />
+
+      <!-- Se NON c'è o va in errore -->
+      <ng-template #noImageDetail>
+        <div class="no-image-detail">Immagine non presente</div>
+      </ng-template>
+
+    </div>
 
       <div class="info-main">
         <h1>{{ character.name }}</h1>

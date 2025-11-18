@@ -9,7 +9,7 @@ import { CharacterCardComponent } from '../character-card/character-card';
 @Component({
   selector: 'app-characters-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, CharacterCardComponent],
+  imports: [CommonModule, FormsModule, CharacterCardComponent],
   templateUrl: './characters-list.html',
   styleUrls: ['./characters-list.css']
 })
