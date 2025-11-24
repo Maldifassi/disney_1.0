@@ -1,36 +1,43 @@
-<div class="app-shell">
-  <header class="app-header">
-    <div class="header-inner">
-      <div class="logo-group">
-        <div class="logo-circle">
-          <span>D</span>
-        </div>
-        <div class="logo-text">
-          <span class="logo-main">Disney Explorer</span>
-          <span class="logo-sub">Characters</span>
-        </div>
-      </div>
+<div class="app-shell"> <!-- Contenitore principale dell'app, gestisce il layout verticale -->
 
+  <header class="app-header"> <!-- Header fisso in alto della pagina -->
+    <div class="header-inner"> <!-- Contenitore interno centrato per contenuti dell'header -->
+
+      <div class="logo-group"> <!-- Gruppo che contiene il logo e il testo -->
+
+        <div class="logo-circle"> <!-- Primo cerchio logo (in realtà non ti serve più, vedi nota sotto) -->
+          <span>D</span> <!-- Lettera D di Disney (puoi rimuoverla se usi solo il logo immagine) -->
+        </div>
+
+        <div class="logo-circle"> <!-- Secondo cerchio che contiene il logo immagine e il testo (qui c'è un problema, vedi nota) -->
+          <img src="assets/disney-logo.png" alt="Disney Logo" class="logo-img"> <!-- Immagine del logo Disney caricata dagli assets -->
+          <span class="logo-main">Disney Explorer</span> <!-- Testo titolo principale vicino al logo -->
+          <span class="logo-sub">Characters</span> <!-- Sottotitolo descrittivo -->
+        </div>
+
+      </div>
+      
       <button
         type="button"
         class="theme-toggle"
-        (click)="toggleTheme()">
-        <span *ngIf="!isDarkTheme">🌙 Tema scuro</span>
-        <span *ngIf="isDarkTheme">☀️ Tema chiaro</span>
+        (click)="toggleTheme()"> <!-- Pulsante per cambiare il tema, chiama il metodo toggleTheme() del componente -->
+        <span *ngIf="!isDarkTheme">🌙 Tema scuro</span> <!-- Testo mostrato quando il tema scuro NON è attivo -->
+        <span *ngIf="isDarkTheme">☀️ Tema chiaro</span> <!-- Testo mostrato quando il tema scuro è attivo -->
       </button>
+
     </div>
   </header>
 
-  <main class="app-main">
-    <router-outlet></router-outlet>
+  <main class="app-main"> <!-- Contenitore principale del contenuto variabile (lista e dettaglio) -->
+    <router-outlet></router-outlet> <!-- Punto in cui Angular carica il componente in base alla route corrente -->
   </main>
 
-  <footer class="app-footer">
+  <footer class="app-footer"> <!-- Footer in basso nella pagina -->
     <small>
       Powered by
       <a href="https://disneyapi.dev" target="_blank" rel="noopener noreferrer">
         Disney API
-      </a>
+      </a> <!-- Link alla documentazione dell'API Disney, in nuova scheda -->
     </small>
   </footer>
 </div>

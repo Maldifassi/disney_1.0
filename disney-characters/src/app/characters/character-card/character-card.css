@@ -1,86 +1,89 @@
 .card {
-  background-color: rgba(255, 255, 255, 0.98);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.15s ease;
-  height: 100%;
-  border: 1px solid rgba(229, 231, 235, 0.9);
+  background-color: rgba(255, 255, 255, 0.98);       /* Sfondo bianco quasi pieno */
+  border-radius: 1rem;                               /* Angoli arrotondati della card */
+  overflow: hidden;                                  /* Taglia l'eventuale contenuto che esce dai bordi */
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);    /* Ombra per effetto "sollevato" */
+  transition: transform 0.12s ease,                  /* Animazioni fluide per hover */
+              box-shadow 0.12s ease,
+              border-color 0.15s ease;
+  height: 100%;                                      /* Fa sì che la card occupi tutta l'altezza della cella della griglia */
+  border: 1px solid rgba(229, 231, 235, 0.9);        /* Bordo chiaro intorno alla card */
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28);
-  border-color: rgba(129, 140, 248, 0.9);
+  transform: translateY(-3px);                       /* Si alza leggermente quando il mouse passa sopra */
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28);    /* Ombra più intensa in hover */
+  border-color: rgba(129, 140, 248, 0.9);            /* Bordo con leggero colore viola in hover */
 }
 
 .card-link {
-  display: flex;
+  display: flex;                                     /* Usa flexbox per disporre immagine e contenuto in colonna */
   flex-direction: column;
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
+  color: inherit;                                    /* Colore del testo eredita dal contesto (niente blu standard link) */
+  text-decoration: none;                             /* Rimuove la sottolineatura tipica dei link */
+  height: 100%;                                      /* Fa sì che il link riempia tutta la card */
 }
 
 /* Immagine */
 
 .image-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: radial-gradient(circle at top, #e0e7ff, #e5e7eb);
-  position: relative;
+  width: 100%;                                       /* Occupa tutta la larghezza della card */
+  aspect-ratio: 4 / 5;                               /* Mantiene un rapporto fisso tra larghezza e altezza */
+  overflow: hidden;                                  /* Taglia overflow dell'immagine */
+  background: radial-gradient(circle at top, #e0e7ff, #e5e7eb); 
+  /* Sfondo grigio/azzurro dietro l'immagine */
+  position: relative;                                /* Posizionamento relativo (utile se si volessero aggiungere overlay) */
 }
 
 .image-wrapper img {
-  width: 100%;
+  width: 100%;                                       /* L'immagine occupa tutto il box */
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                                 /* Ritaglia mantenendo le proporzioni */
 }
 
 /* Messaggio "Immagine non presente" */
 
 .no-image {
-  width: 100%;
+  width: 100%;                                       /* Occupa tutto il box immagine */
   height: 100%;
-  background: repeating-linear-gradient(
+  background: repeating-linear-gradient(             /* Pattern a strisce diagonali */
       135deg,
       #e5e7eb,
       #e5e7eb 10px,
       #d1d5db 10px,
       #d1d5db 20px
   );
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 1.1rem;
-  color: #374151;
-  font-size: 0.9rem;
-  font-weight: 500;
+  display: flex;                                     /* Flexbox per centrare il testo */
+  justify-content: flex-start;                       /* Allinea il testo verso sinistra */
+  align-items: center;                               /* Centra verticalmente */
+  padding-left: 1.1rem;                              /* Spazio dalla sinistra */
+  color: #374151;                                    /* Colore del testo grigio scuro */
+  font-size: 0.9rem;                                 /* Dimensione del testo */
+  font-weight: 500;                                  /* Semi-grassetto */
 }
 
 /* Contenuto card */
 
 .card-body {
-  padding: 0.75rem 0.9rem 0.85rem;
+  padding: 0.75rem 0.9rem 0.85rem;                   /* Padding interno su tutti i lati */
 }
 
 .card-body h2 {
-  font-size: 1rem;
-  margin: 0 0 0.35rem;
-  font-weight: 600;
-  color: #111827;
+  font-size: 1rem;                                   /* Dimensione del titolo (nome del personaggio) */
+  margin: 0 0 0.35rem;                               /* Nessun margine sopra, un po' sotto */
+  font-weight: 600;                                  /* Semi-grassetto */
+  color: #111827;                                    /* Colore testo scuro */
 }
 
 .meta {
-  font-size: 0.78rem;
-  color: #6b7280;
-  margin: 0 0 0.35rem;
+  font-size: 0.78rem;                                /* Font piccolo per le info extra (film, serie tv) */
+  color: #6b7280;                                    /* Colore grigio del testo */
+  margin: 0 0 0.35rem;                               /* Nessun margine sopra, un po' sotto */
 }
 
 .cta {
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #2563eb;
+  margin: 0;                                         /* Nessun margine */
+  font-size: 0.85rem;                                /* Font leggermente più grande della meta */
+  font-weight: 600;                                  /* Semi-grassetto */
+  color: #2563eb;                                    /* Colore blu per dare l'idea di "link" */
 }

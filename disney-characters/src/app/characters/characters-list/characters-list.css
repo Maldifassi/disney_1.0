@@ -1,176 +1,183 @@
 .list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: flex;                                      /* Usa layout flex per il contenitore principale */
+  flex-direction: column;                             /* Dispone gli elementi (search, griglia, paginazione) in colonna */
+  gap: 1.25rem;                                       /* Spazio verticale tra i blocchi */
 }
 
 /* Pannello di ricerca */
 
 .search-panel {
-  background-color: rgba(255, 255, 255, 0.96);
-  padding: 1rem 1.25rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
-  border: 1px solid rgba(209, 213, 219, 0.7);
+  background-color: rgba(255, 255, 255, 0.96);        /* Sfondo quasi bianco leggermente trasparente */
+  padding: 1rem 1.25rem;                              /* Spaziatura interna pannello */
+  border-radius: 1rem;                                /* Angoli arrotondati */
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);      /* Ombra per effetto “card” */
+  border: 1px solid rgba(209, 213, 219, 0.7);         /* Bordo grigio chiaro */
 }
 
 .search-label {
-  display: block;
-  margin-bottom: 0.45rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #111827;
+  display: block;                                     /* Forza l'etichetta su una riga intera */
+  margin-bottom: 0.45rem;                             /* Spazio sotto l'etichetta */
+  font-weight: 600;                                   /* Testo in semi-grassetto */
+  font-size: 0.95rem;                                 /* Dimensione un po' più grande del normale */
+  color: #111827;                                     /* Colore testo scuro */
 }
 
 .search-row {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  display: flex;                                      /* Dispone input e pulsanti su una riga */
+  gap: 0.6rem;                                        /* Spazio tra input e pulsanti */
+  flex-wrap: wrap;                                    /* Permette di andare a capo sugli schermi piccoli */
 }
 
 .search-row input {
-  flex: 1 1 230px;
-  padding: 0.55rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  outline: none;
-  font-size: 0.9rem;
-  background-color: #f9fafb;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  flex: 1 1 230px;                                    /* L'input occupa lo spazio disponibile, minimo 230px */
+  padding: 0.55rem 0.75rem;                           /* Spaziatura interna dell'input */
+  border-radius: 999px;                               /* Input a forma di pillola */
+  border: 1px solid #d1d5db;                          /* Bordo grigio chiaro */
+  outline: none;                                      /* Rimuove l'outline blu standard del browser */
+  font-size: 0.9rem;                                  /* Dimensione del testo */
+  background-color: #f9fafb;                          /* Sfondo leggermente grigio */
+  transition: border-color 0.15s ease,                /* Transizioni morbide per interazione */
+              box-shadow 0.15s ease,
+              background-color 0.15s ease;
 }
 
 .search-row input:focus {
-  border-color: #4f46e5;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+  border-color: #4f46e5;                              /* Bordo viola quando l'input è in focus */
+  background-color: #ffffff;                          /* Sfondo bianco in focus */
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);      /* Bagliore viola attorno all'input */
 }
 
 .search-row button {
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 0.88rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  transition: transform 0.08s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+  padding: 0.55rem 0.9rem;                            /* Spaziatura interna dei pulsanti */
+  border-radius: 999px;                               /* Pulsanti a pillola */
+  border: none;                                       /* Nessun bordo standard */
+  cursor: pointer;                                    /* Cursore a mano */
+  font-weight: 500;                                   /* Testo del pulsante in semi-grassetto */
+  font-size: 0.88rem;                                 /* Dimensione testo leggermente piccola */
+  display: inline-flex;                               /* Usa flex per centrare il contenuto */
+  align-items: center;                                /* Centro verticale */
+  justify-content: center;                            /* Centro orizzontale */
+  gap: 0.25rem;                                       /* Piccolo spazio se ci fosse icona */
+  transition: transform 0.08s ease,                   /* Animazione di hover (movimento) */
+              box-shadow 0.1s ease,
+              background-color 0.15s ease;
 }
 
 .search-row button:first-of-type {
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  color: #f9fafb;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  background: linear-gradient(135deg, #2563eb, #4f46e5); /* Gradiente blu/viola per il pulsante "Cerca" */
+  color: #f9fafb;                                       /* Testo bianco */
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);       /* Ombra colorata sotto il pulsante principale */
 }
 
 .search-row button.secondary {
-  background-color: #e5e7eb;
-  color: #111827;
+  background-color: #e5e7eb;                            /* Sfondo grigio per il pulsante secondario ("Reset") */
+  color: #111827;                                       /* Testo scuro */
 }
 
 .search-row button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.2);
+  transform: translateY(-1px);                          /* Al passaggio del mouse, si alza leggermente */
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.2);         /* Ombra un po' più forte */
 }
 
 .search-row button:active {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: translateY(0);                             /* Quando viene cliccato torna in basso */
+  box-shadow: none;                                     /* Rimuove ombra durante il click */
 }
 
 /* Stati messaggi */
 
 .state-message {
-  text-align: center;
-  padding: 1.6rem 0.75rem;
-  color: #4b5563;
-  font-size: 0.9rem;
+  text-align: center;                                   /* Testo centrato */
+  padding: 1.6rem 0.75rem;                              /* Spazio interno sopra/sotto */
+  color: #4b5563;                                       /* Colore grigio del testo */
+  font-size: 0.9rem;                                    /* Font leggermente piccolo */
 }
 
 .state-message.error {
-  color: #b91c1c;
+  color: #b91c1c;                                       /* Colore rosso per messaggi di errore */
 }
 
 .state-message button {
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: none;
-  background-color: #ef4444;
-  color: #f9fafb;
-  font-size: 0.85rem;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(248, 113, 113, 0.4);
+  margin-top: 0.5rem;                                   /* Spazio sopra il pulsante di retry */
+  padding: 0.45rem 0.9rem;                              /* Spaziatura pulsante */
+  border-radius: 999px;                                 /* Pulsante a pillola */
+  border: none;                                         /* Nessun bordo standard */
+  background-color: #ef4444;                            /* Sfondo rosso acceso */
+  color: #f9fafb;                                       /* Testo bianco */
+  font-size: 0.85rem;                                   /* Dimensione testo */
+  cursor: pointer;                                      /* Cursore a mano */
+  box-shadow: 0 4px 10px rgba(248, 113, 113, 0.4);      /* Ombra rossa */
 }
 
 .state-message button:hover {
-  background-color: #dc2626;
+  background-color: #dc2626;                            /* Rosso più scuro in hover */
 }
 
 /* Spinner */
 
 .spinner {
-  width: 28px;
+  width: 28px;                                          /* Diametro del cerchio caricamento */
   height: 28px;
-  border-radius: 50%;
-  border: 3px solid #d1d5db;
-  border-top-color: #6366f1;
-  margin: 0 auto 0.5rem;
-  animation: spin 0.7s linear infinite;
+  border-radius: 50%;                                   /* Cerchio */
+  border: 3px solid #d1d5db;                            /* Bordo grigio */
+  border-top-color: #6366f1;                            /* Parte superiore viola (per l'effetto loading) */
+  margin: 0 auto 0.5rem;                                /* Centra orizzontalmente e aggiunge margine sotto */
+  animation: spin 0.7s linear infinite;                 /* Anima la rotazione continuamente */
 }
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg);                          /* Ruota di 360° per l'animazione dello spinner */
   }
 }
 
 /* Griglia card */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 1rem;
+  display: grid;                                        /* Usa CSS grid per disporre le card */
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); 
+  /* Crea tante colonne da minimo 190px che si riempiono automaticamente */
+  gap: 1rem;                                            /* Spazio tra le card */
 }
 
 /* Paginazione */
 
 .pagination {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.9rem;
+  margin-top: 0.5rem;                                   /* Spazio sopra alla sezione di paginazione */
+  display: flex;                                        /* Flexbox per i bottoni di paginazione */
+  justify-content: center;                              /* Centra i bottoni orizzontalmente */
+  align-items: center;                                  /* Centra verticalmente */
+  gap: 0.8rem;                                          /* Spazio tra gli elementi (bottoni + testo) */
+  font-size: 0.9rem;                                    /* Dimensione testo della paginazione */
 }
 
 .pagination button {
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background-color: #1d4ed8;
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 500;
-  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.35);
-  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.1s ease;
+  padding: 0.4rem 0.8rem;                               /* Spaziatura interna dei bottoni di pagina */
+  border-radius: 999px;                                 /* Bottoni a pillola */
+  border: none;                                         /* Nessun bordo standard */
+  cursor: pointer;                                      /* Cursore a mano */
+  background-color: #1d4ed8;                            /* Sfondo blu */
+  color: #ffffff;                                       /* Testo bianco */
+  font-size: 0.85rem;                                   /* Font piccolo */
+  font-weight: 500;                                     /* Semi-grassetto */
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.35);        /* Ombra blu sotto il bottone */
+  transition: background-color 0.15s ease,              /* Transizioni morbide */
+              transform 0.08s ease,
+              box-shadow 0.1s ease;
 }
 
 .pagination button:hover:not(:disabled) {
-  background-color: #1e40af;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(30, 64, 175, 0.35);
+  background-color: #1e40af;                            /* Colore blu più scuro in hover (se non disabilitato) */
+  transform: translateY(-1px);                          /* Leggero sollevamento */
+  box-shadow: 0 5px 10px rgba(30, 64, 175, 0.35);       /* Ombra più intensa */
 }
 
 .pagination button:disabled {
-  background-color: #9ca3af;
-  box-shadow: none;
-  cursor: default;
+  background-color: #9ca3af;                            /* Colore grigio se il bottone è disabilitato */
+  box-shadow: none;                                     /* Nessuna ombra */
+  cursor: default;                                      /* Cursore standard, non cliccabile */
 }
 
 .pagination span {
-  color: #374151;
+  color: #374151;                                       /* Colore del testo "Pagina X di Y" */
 }

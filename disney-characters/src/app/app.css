@@ -1,130 +1,140 @@
 .app-shell {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;                     /* L'altezza minima è pari all'altezza della finestra */
+  display: flex;                         /* Usa flexbox per disporre header, main, footer */
+  flex-direction: column;                /* Dispone gli elementi verticalmente */
 }
 
 /* HEADER */
 
 .app-header {
-  background: linear-gradient(120deg, #1d4ed8, #6366f1);
-  color: #f9fafb;
-  padding: 0.8rem 1.5rem;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background: linear-gradient(120deg, #1d4ed8, #6366f1); /* Sfondo sfumato blu/viola */
+  color: #f9fafb;                                        /* Colore del testo nell'header (quasi bianco) */
+  padding: 0.8rem 1.5rem;                                /* Spaziatura interna sopra/sotto e ai lati */
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);          /* Ombra sotto l'header */
+  position: sticky;                                      /* Mantiene l'header fissato in alto quando si scrolla */
+  top: 0;                                                /* Posizione sticky rispetto al top della pagina */
+  z-index: 10;                                           /* Z-index per stare sopra ad altri elementi */
 }
 
 .header-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  max-width: 1120px;                                     /* Larghezza massima del contenitore centrale */
+  margin: 0 auto;                                        /* Centra il contenitore orizzontalmente */
+  display: flex;                                         /* Flexbox per gestire logo e pulsante tema */
+  align-items: center;                                   /* Allinea verticalmente al centro */
+  justify-content: space-between;                        /* Spazia logo e pulsante agli estremi */
+  gap: 1rem;                                             /* Spazio tra gli elementi interni */
 }
 
 /* LOGO */
 
 .logo-group {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  display: flex;                                         /* Pone logo e testo sulla stessa riga */
+  align-items: center;                                   /* Centra verticalmente */
+  gap: 0.7rem;                                           /* Spazio orizzontale tra cerchio e testo */
 }
 
 .logo-circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #fef9c3, #f59e0b);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);
+  width: 45px;                                           /* Larghezza del cerchio logo */
+  height: 45px;                                          /* Altezza del cerchio logo */
+  border-radius: 999px;                                  /* Rende il contenitore perfettamente circolare */
+  background: radial-gradient(circle at 30% 20%, #fef9c3, #f59e0b); /* Gradiente giallo/arancio tipo sole */
+  display: flex;                                         /* Usa flexbox per centrare l'immagine o la lettera */
+  align-items: center;                                   /* Centra verticalmente il contenuto */
+  justify-content: center;                               /* Centra orizzontalmente il contenuto */
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);          /* Ombra sotto il cerchio */
+  overflow: hidden;                                      /* Taglia l'eventuale immagine che esce dal cerchio */
 }
 
 .logo-circle span {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #111827;
+  font-weight: 800;                                      /* Spessore del testo (se usi ancora la D) */
+  font-size: 1.1rem;                                     /* Dimensione del testo */
+  color: #111827;                                        /* Colore scuro del testo */
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  display: flex;                                         /* Contenitore per le scritte del logo */
+  flex-direction: column;                                /* Dispone il testo su due righe (main + sub) */
+  line-height: 1.1;                                      /* Riduce leggermente lo spazio tra le righe */
 }
 
 .logo-main {
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
-  font-weight: 600;
+  font-size: 1.15rem;                                    /* Dimensione del titolo principale */
+  letter-spacing: 0.04em;                                /* Aumenta leggermente la spaziatura tra le lettere */
+  font-weight: 600;                                      /* Spessore medio-forte */
 }
 
 .logo-sub {
-  font-size: 0.75rem;
-  opacity: 0.9;
+  font-size: 0.75rem;                                    /* Sottotitolo più piccolo */
+  opacity: 0.9;                                          /* Leggera trasparenza */
+}
+
+.logo-img {
+  width: 120%;                                           /* L'immagine riempie un po' più del cerchio */
+  height: auto;                                          /* Altezza proporzionata alla larghezza */
+  object-fit: cover;                                     /* Ritaglia l'immagine mantenendo le proporzioni */
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));       /* Aggiunge un'ombra al logo per più contrasto */
 }
 
 /* THEME TOGGLE */
 
 .theme-toggle {
-  border-radius: 999px;
-  border: none;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  background-color: rgba(15, 23, 42, 0.16);
-  color: #e5e7eb;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(6px);
-  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.12s ease;
+  border-radius: 999px;                                  /* Pulsante a forma di pillola */
+  border: none;                                          /* Rimuove il bordo di default */
+  padding: 0.4rem 0.9rem;                                /* Spaziatura interna pulsante */
+  font-size: 0.85rem;                                    /* Dimensione testo del pulsante */
+  cursor: pointer;                                       /* Mostra il cursore a mano quando si passa sopra */
+  background-color: rgba(15, 23, 42, 0.16);              /* Sfondo semi-trasparente scuro */
+  color: #e5e7eb;                                        /* Colore testo chiaro */
+  display: inline-flex;                                  /* Flex inline per centrare l'emoji e il testo */
+  align-items: center;                                   /* Centra verticalmente il contenuto */
+  gap: 0.4rem;                                           /* Spazio tra emoji e testo */
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);          /* Ombra del pulsante */
+  backdrop-filter: blur(6px);                            /* Effetto blur dello sfondo (glassmorphism) */
+  transition: background-color 0.15s ease,               /* Transizioni morbide per hover */
+              transform 0.08s ease,
+              box-shadow 0.12s ease;
 }
 
 .theme-toggle:hover {
-  background-color: rgba(15, 23, 42, 0.28);
-  transform: translateY(-1px);
+  background-color: rgba(15, 23, 42, 0.28);              /* Scuro più intenso quando è in hover */
+  transform: translateY(-1px);                           /* Leggero movimento verso l'alto */
 }
 
 .theme-toggle:active {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: translateY(0);                              /* Torna giù quando viene cliccato */
+  box-shadow: none;                                      /* Rimuove l'ombra quando premuto */
 }
 
 /* MAIN */
 
 .app-main {
-  flex: 1;
-  padding: 1.5rem 1.25rem 1.75rem;
+  flex: 1;                                               /* Occupa tutto lo spazio verticale rimanente tra header e footer */
+  padding: 1.5rem 1.25rem 1.75rem;                       /* Spaziatura interna per il contenuto */
 }
 
 .app-main > * {
-  max-width: 1120px;
-  margin: 0 auto;
+  max-width: 1120px;                                     /* Limita la larghezza massima del contenuto */
+  margin: 0 auto;                                        /* Centra il contenuto orizzontalmente */
 }
 
 /* FOOTER */
 
 .app-footer {
-  text-align: center;
-  padding: 0.9rem;
-  font-size: 0.8rem;
-  color: #6b7280;
-  background-color: rgba(243, 244, 246, 0.9);
-  border-top: 1px solid rgba(209, 213, 219, 0.7);
-  backdrop-filter: blur(8px);
+  text-align: center;                                    /* Allinea il testo del footer al centro */
+  padding: 0.9rem;                                       /* Spaziatura interna */
+  font-size: 0.8rem;                                     /* Testo più piccolo */
+  color: #6b7280;                                        /* Colore grigio del testo */
+  background-color: rgba(243, 244, 246, 0.9);            /* Sfondo chiaro semi-trasparente */
+  border-top: 1px solid rgba(209, 213, 219, 0.7);        /* Bordo superiore sottile */
+  backdrop-filter: blur(8px);                            /* Leggero blur come effetto vetro */
 }
 
 .app-footer a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
+  color: #2563eb;                                        /* Colore blu dei link nel footer */
+  text-decoration: none;                                 /* Rimuove la sottolineatura di default */
+  font-weight: 500;                                      /* Link leggermente più marcato */
 }
 
 .app-footer a:hover {
-  text-decoration: underline;
+  text-decoration: underline;                            /* Sottolinea il link quando è in hover */
 }

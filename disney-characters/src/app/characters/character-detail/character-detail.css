@@ -1,227 +1,231 @@
 .detail-container {
-  display: flex;
+  display: flex;                                      /* Usa flexbox per disporre gli elementi in colonna */
   flex-direction: column;
-  gap: 1rem;
+  gap: 1rem;                                          /* Spazio tra il pulsante e il contenuto */
 }
 
 /* Pulsante indietro */
 
 .back-button {
-  align-self: flex-start;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  border: 1px solid rgba(209, 213, 219, 0.78);
-  color: #2563eb;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.4);
-  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.1s ease;
+  align-self: flex-start;                             /* Allinea il pulsante a sinistra del contenitore */
+  background-color: rgba(255, 255, 255, 0.9);         /* Sfondo bianco semi-trasparente */
+  border-radius: 999px;                               /* Pulsante a pillola */
+  border: 1px solid rgba(209, 213, 219, 0.78);        /* Bordo grigio chiaro */
+  color: #2563eb;                                     /* Testo blu */
+  font-weight: 500;                                   /* Semi-grassetto */
+  cursor: pointer;                                    /* Cursore a mano */
+  padding: 0.35rem 0.9rem;                            /* Spaziatura interna */
+  font-size: 0.85rem;                                 /* Dimensione testo piccola */
+  display: inline-flex;                               /* Flex per centrare il contenuto */
+  align-items: center;                                /* Centra verticalmente l'icona freccia e il testo */
+  gap: 0.25rem;                                       /* Spazio tra freccia e testo */
+  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.4);    /* Ombra leggera */
+  transition: background-color 0.15s ease,            /* Effetti hover */
+              transform 0.08s ease,
+              box-shadow 0.1s ease;
 }
 
 .back-button:hover {
-  background-color: #eff6ff;
-  transform: translateY(-1px);
+  background-color: #eff6ff;                          /* Sfondo azzurrino in hover */
+  transform: translateY(-1px);                        /* Leggero sollevamento */
 }
 
 .back-button:active {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: translateY(0);                           /* Torna giù quando cliccato */
+  box-shadow: none;                                   /* Rimuove l'ombra durante il click */
 }
 
 /* Header dettaglio */
 
 .detail-header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.98);
-  padding: 1.2rem 1.3rem;
-  border-radius: 1rem;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-  border: 1px solid rgba(209, 213, 219, 0.8);
+  display: flex;                                      /* Layout flessibile per immagine + info */
+  flex-wrap: wrap;                                    /* Permette di andare a capo su schermi piccoli */
+  gap: 1.5rem;                                        /* Spazio tra immagine e info */
+  background-color: rgba(255, 255, 255, 0.98);        /* Sfondo bianco quasi pieno */
+  padding: 1.2rem 1.3rem;                             /* Spaziatura interna */
+  border-radius: 1rem;                                /* Angoli arrotondati */
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);     /* Ombra per effetto card */
+  border: 1px solid rgba(209, 213, 219, 0.8);         /* Bordo grigio chiaro */
 }
 
 .image-box {
-  flex: 0 0 240px;
-  max-width: 260px;
+  flex: 0 0 240px;                                    /* Larghezza fissa di base per l'immagine */
+  max-width: 260px;                                   /* Larghezza massima leggermente più grande */
   background: radial-gradient(circle at top, #e0e7ff, #e5e7eb);
-  border-radius: 0.9rem;
-  overflow: hidden;
+  /* Sfondo grigio/azzurro dietro all'immagine */
+  border-radius: 0.9rem;                              /* Angoli arrotondati */
+  overflow: hidden;                                   /* Taglia eventuale overflow dell'immagine */
 }
 
 .image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;                                        /* L'immagine occupa tutta la larghezza del box */
+  height: 100%;                                       /* E tutta l'altezza */
+  object-fit: cover;                                  /* Ritaglia mantenendo le proporzioni */
 }
 
 /* Messaggio "Immagine non presente" */
 
 .no-image-detail {
-  width: 100%;
+  width: 100%;                                        /* Occupa tutto il box immagine */
   height: 100%;
-  background: repeating-linear-gradient(
+  background: repeating-linear-gradient(              /* Pattern diagonale grigio */
       135deg,
       #e5e7eb,
       #e5e7eb 12px,
       #d1d5db 12px,
       #d1d5db 24px
   );
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 1.4rem;
-  color: #374151;
-  font-weight: 500;
-  font-size: 0.95rem;
+  display: flex;                                      /* Centra il testo con flexbox */
+  justify-content: flex-start;                        /* Allinea il testo verso sinistra */
+  align-items: center;                                /* Centra verticalmente */
+  padding-left: 1.4rem;                               /* Spazio dalla sinistra */
+  color: #374151;                                     /* Colore testo grigio scuro */
+  font-weight: 500;                                   /* Semi-grassetto */
+  font-size: 0.95rem;                                 /* Dimensione leggermente grande */
 }
 
 /* Info principali */
 
 .info-main {
-  flex: 1 1 260px;
+  flex: 1 1 260px;                                    /* La colonna info occupa lo spazio rimanente */
 }
 
 .info-main h1 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.7rem;
-  letter-spacing: 0.01em;
+  margin-top: 0;                                      /* Elimina margine superiore */
+  margin-bottom: 0.4rem;                              /* Margine sotto il titolo */
+  font-size: 1.7rem;                                  /* Dimensione grande per il nome */
+  letter-spacing: 0.01em;                             /* Piccola spaziatura tra lettere */
 }
 
 .chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.7rem;
+  display: flex;                                      /* Dispone le chip su una riga */
+  flex-wrap: wrap;                                    /* Permette l'andare a capo se servisse */
+  gap: 0.4rem;                                        /* Spazio tra le chip */
+  margin-bottom: 0.7rem;                              /* Spazio sotto il gruppo */
 }
 
 .chip {
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background-color: #e0f2fe;
-  color: #075985;
-  font-size: 0.8rem;
-  font-weight: 500;
+  padding: 0.25rem 0.6rem;                            /* Spaziatura interna delle chip */
+  border-radius: 999px;                               /* Chip a pillola */
+  background-color: #e0f2fe;                          /* Sfondo azzurrino chiaro */
+  color: #075985;                                     /* Testo azzurro scuro */
+  font-size: 0.8rem;                                  /* Font piccolo */
+  font-weight: 500;                                   /* Semi-grassetto */
 }
 
 .wiki-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.2rem;
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
+  display: inline-flex;                               /* Link con icona/testo allineati -->
+  align-items: center;                                /* Allinea verticalmente */
+  gap: 0.25rem;                                       /* Spazio tra testo e eventuale icona */
+  margin-top: 0.2rem;                                 /* Spazio sopra il link */
+  color: #2563eb;                                     /* Colore blu */
+  text-decoration: none;                              /* Nessuna sottolineatura di default */
+  font-weight: 500;                                   /* Semi-grassetto */
+  font-size: 0.9rem;                                  /* Font medio-piccolo */
 }
 
 .wiki-link:hover {
-  text-decoration: underline;
+  text-decoration: underline;                         /* Sottolinea il link in hover */
 }
 
 /* Griglia sezioni */
 
 .detail-grid {
-  display: grid;
+  display: grid;                                      /* Usa CSS grid per le sezioni sotto */
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
+  /* Crea colonne da minimo 230px, adattandosi allo spazio */
+  gap: 1rem;                                          /* Spazio tra le sezioni */
 }
 
 .detail-section {
-  background-color: rgba(255, 255, 255, 0.98);
-  padding: 0.9rem 1rem;
-  border-radius: 0.9rem;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
-  border: 1px solid rgba(229, 231, 235, 0.9);
+  background-color: rgba(255, 255, 255, 0.98);        /* Sfondo bianco quasi pieno */
+  padding: 0.9rem 1rem;                               /* Spaziatura interna */
+  border-radius: 0.9rem;                              /* Angoli arrotondati */
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);      /* Ombra leggera */
+  border: 1px solid rgba(229, 231, 235, 0.9);         /* Bordo grigio chiaro */
 }
 
 .detail-section h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-top: 0;                                      /* Nessun margine sopra */
+  margin-bottom: 0.5rem;                              /* Spazio sotto il titolo */
+  font-size: 1rem;                                    /* Dimensione titolo sezione */
+  font-weight: 600;                                   /* Semi-grassetto */
 }
 
 .detail-section ul {
-  list-style: disc;
-  padding-left: 1.1rem;
-  margin: 0;
+  list-style: disc;                                   /* Usa pallini come stile lista */
+  padding-left: 1.1rem;                               /* Spazio a sinistra per i pallini */
+  margin: 0;                                          /* Rimuove margini di default */
 }
 
 .detail-section li {
-  font-size: 0.88rem;
-  margin-bottom: 0.2rem;
-  color: #374151;
+  font-size: 0.88rem;                                 /* Dimensione dei singoli elementi lista */
+  margin-bottom: 0.2rem;                              /* Spazio tra le righe della lista */
+  color: #374151;                                     /* Colore testo grigio scuro */
 }
 
 /* Allies / Enemies */
 
 .detail-section.two-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
+  display: grid;                                      /* Dispone Allies e Enemies in griglia a due colonne */
+  grid-template-columns: 1fr 1fr;                     /* Due colonne con larghezza uguale */
+  gap: 0.85rem;                                       /* Spazio tra le due colonne */
 }
 
 /* Stati caricamento/errore */
 
 .state-message {
-  text-align: center;
-  padding: 1.5rem 0.75rem;
-  color: #4b5563;
-  font-size: 0.9rem;
+  text-align: center;                                 /* Testo centrato */
+  padding: 1.5rem 0.75rem;                            /* Spaziatura interna */
+  color: #4b5563;                                     /* Colore testo grigio */
+  font-size: 0.9rem;                                  /* Dimensione testo */
 }
 
 .state-message.error {
-  color: #b91c1c;
+  color: #b91c1c;                                     /* Colore rosso per errori */
 }
 
 .state-message button {
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: none;
-  background-color: #ef4444;
-  color: #f9fafb;
-  font-size: 0.85rem;
-  cursor: pointer;
+  margin-top: 0.5rem;                                 /* Spazio sopra il pulsante */
+  padding: 0.45rem 0.9rem;                            /* Spaziatura */
+  border-radius: 999px;                               /* Pulsante a pillola */
+  border: none;                                       /* Nessun bordo */
+  background-color: #ef4444;                          /* Sfondo rosso */
+  color: #f9fafb;                                     /* Testo bianco */
+  font-size: 0.85rem;                                 /* Dimensione testo */
+  cursor: pointer;                                    /* Cursore a mano */
 }
 
 /* Spinner */
 
 .spinner {
-  width: 28px;
+  width: 28px;                                        /* Dimensioni dello spinner */
   height: 28px;
-  border-radius: 50%;
-  border: 3px solid #d1d5db;
-  border-top-color: #6366f1;
-  margin: 0 auto 0.5rem;
-  animation: spin 0.7s linear infinite;
+  border-radius: 50%;                                 /* Cerchio */
+  border: 3px solid #d1d5db;                          /* Bordo grigio */
+  border-top-color: #6366f1;                          /* Bordo superiore viola */
+  margin: 0 auto 0.5rem;                              /* Centra lo spinner e aggiunge margine sotto */
+  animation: spin 0.7s linear infinite;               /* Anima la rotazione */
 }
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg);                        /* Ruota di 360° per l'animazione */
   }
 }
 
 /* Responsive */
 
-@media (max-width: 640px) {
+@media (max-width: 640px) {                           /* Regole per schermi piccoli (mobile) */
   .detail-header {
-    padding: 1rem;
+    padding: 1rem;                                    /* Riduce il padding del header in mobile */
   }
 
   .detail-section.two-column {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;                       /* Allies ed Enemies uno sotto l’altro su mobile */
   }
 
   .info-main h1 {
-    font-size: 1.4rem;
+    font-size: 1.4rem;                                /* Riduce la dimensione del titolo su schermi piccoli */
   }
 }
