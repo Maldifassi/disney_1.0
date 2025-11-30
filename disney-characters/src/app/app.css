@@ -7,8 +7,8 @@
 /* HEADER */
 
 .app-header {
-  background: linear-gradient(120deg, #1d4ed8, #6366f1); /* Sfondo sfumato blu/viola */
-  color: #f9fafb;                                        /* Colore del testo nell'header (quasi bianco) */
+  background: linear-gradient(120deg, #0b42e7, #6366f1); /* Sfondo sfumato blu/viola */
+  color: #f8f9fa;                                        /* Colore del testo nell'header (quasi bianco) */
   padding: 0.8rem 1.5rem;                                /* Spaziatura interna sopra/sotto e ai lati */
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);          /* Ombra sotto l'header */
   position: sticky;                                      /* Mantiene l'header fissato in alto quando si scrolla */
@@ -84,7 +84,7 @@
   font-size: 0.85rem;                                    /* Dimensione testo del pulsante */
   cursor: pointer;                                       /* Mostra il cursore a mano quando si passa sopra */
   background-color: rgba(15, 23, 42, 0.16);              /* Sfondo semi-trasparente scuro */
-  color: #e5e7eb;                                        /* Colore testo chiaro */
+  color: #f8f8f8;                                        /* Colore testo chiaro */
   display: inline-flex;                                  /* Flex inline per centrare l'emoji e il testo */
   align-items: center;                                   /* Centra verticalmente il contenuto */
   gap: 0.4rem;                                           /* Spazio tra emoji e testo */
@@ -96,7 +96,7 @@
 }
 
 .theme-toggle:hover {
-  background-color: rgba(15, 23, 42, 0.28);              /* Scuro più intenso quando è in hover */
+  background-color: rgba(13, 20, 34, 0.28);              /* Scuro più intenso quando è in hover */
   transform: translateY(-1px);                           /* Leggero movimento verso l'alto */
 }
 

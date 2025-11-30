@@ -12,14 +12,14 @@ export class DisneyApiService {                                    // Definizion
 
   constructor(private http: HttpClient) {}                         // Costruttore che inietta HttpClient come dipendenza
 
-  getCharacters(page: number = 1, pageSize: number = 20): Observable<CharactersListResponse> {
+  getCharacters(page: number = 1, pageSize: number = 20): Observable<CharactersListResponse> {        //mostra lista dei personaggi con paginazione.
     // Metodo che recupera la lista di personaggi, con paginazione
-    const url = `${this.baseUrl}/character?page=${page}&pageSize=${pageSize}`; 
+    const url = `${this.baseUrl}/character?page=${page}&pageSize=${pageSize}`;                       // page numero personaggi da visualizzare pagesize quanti per pagina
     // Costruisce l'URL aggiungendo parametri page e pageSize
     return this.http.get<CharactersListResponse>(url);             // Esegue una GET e ritorna un Observable tipizzato con CharactersListResponse
   }
 
-  searchCharactersByName(name: string, page: number = 1): Observable<CharactersListResponse> {
+  searchCharactersByName(name: string, page: number = 1): Observable<CharactersListResponse> {    //cerca personaggi per nome
     // Metodo che cerca i personaggi in base al nome
     const params = new URLSearchParams({                           // Crea un oggetto URLSearchParams per costruire la query string
       name,                                                        // Parametro 'name' con il valore passato

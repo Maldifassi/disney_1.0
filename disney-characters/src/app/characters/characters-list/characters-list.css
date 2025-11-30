@@ -24,7 +24,7 @@
 
 .search-row {
   display: flex;                                      /* Dispone input e pulsanti su una riga */
-  gap: 0.6rem;                                        /* Spazio tra input e pulsanti */
+  gap: 0.6rem;                                        /* Spazio tra input e pulsanti cerca e reset*/
   flex-wrap: wrap;                                    /* Permette di andare a capo sugli schermi piccoli */
 }
 

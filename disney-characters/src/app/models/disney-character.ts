@@ -29,3 +29,5 @@ export interface CharacterDetailResponse {     // Interfaccia per la risposta de
   };
   data: DisneyCharacter;                      // Il personaggio richiesto
 }
+// Definiscono la struttura dei personaggi Disney e le risposte dell’API, 
+// permettendo a Angular di gestire dati tipizzati, sicuri e organizzati.
